@@ -23,13 +23,27 @@ spec:
         - name: config
           persistentVolumeCLaim:
             claimName: {{ .name }}-config
+        - name: codesys-user-config
+          configMap:
+            name: {{ .name }}-user-config
+            items:
+              - key: user-config
+                path: CODESYSControl_User.cfg
       initContainers:
       - name: init-plc-application
-        image: ubi9/ubi-minimal
-        command: ['sh', '-c', "mkdir -p /data/codesyscontrol/PlcLogic/Application && cd /data/codesyscontrol/PlcLogic/Application && curl -O {{ .appUrl }}/Generator.app && curl -O {{ .appUrl }}/Generator.crc" ]
+        image: 'ubi9/ubi-minimal'
+        command:
+          - sh
+          - '-c'
+          - mkdir -p /data/codesyscontrol/PlcLogic/Application && cd /data/codesyscontrol/PlcLogic/Application && curl -O {{ .appUrl }}/Application.app && curl -O {{ .appUrl }}/Application.crc && cp -f /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/ 
+        resources: {}
         volumeMounts:
-          - mountPath: "/data/codesyscontrol"
-            name: data-storage 
+          - name: data-storage
+            mountPath: /data/codesyscontrol
+          - name: codesys-user-config
+            mountPath: /temp/conf/
+          - name: config
+            mountPath: /conf/codesyscontrol
       containers:
         - name: codesys-plc
           image: quay.io/rh-ee-hvanniek/codesyscontrol:4.14.0.0
