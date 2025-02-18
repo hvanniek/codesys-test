@@ -1,0 +1,7 @@
+---
+plcs:
+  - name: codesys-plc-1
+    appUrl: https://github.com/hvanniek/codesys-test/blob/main/files/
+    partOf: codesys
+    appName: Generator
+    serialNo: 00000000333a536a
