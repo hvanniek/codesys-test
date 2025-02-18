@@ -7,11 +7,11 @@ metadata:
     app.kubernetes.io/part-of: plc-application-{{ .name }}
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
-  storageClassName: ocs-storagecluster-cephfs
+  storageClassName: lvms-vg1-immediate
   volumeMode: Filesystem
 ---
 
@@ -23,10 +23,10 @@ metadata:
     app.kubernetes.io/part-of: {{ .partOf }}
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
-  storageClassName: ocs-storagecluster-cephfs
+  storageClassName: lvms-vg1-immediate
   volumeMode: Filesystem
 {{- end }}
