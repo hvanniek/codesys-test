@@ -1,0 +1,17 @@
+{{- range $.Values.plcs }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .name }}
+  labels:
+    app.kubernetes.io/part-of: {{ .partOf }}
+spec:
+  selector:
+    app: {{ .name }}
+  ports:
+    - name: opc-ua
+      protocol: TCP
+      port: 4840
+      targetPort: 4840
+
+{{- end }}
