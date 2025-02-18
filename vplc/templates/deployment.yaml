@@ -56,3 +56,4 @@ spec:
               name: config
             - mountPath: "/data/codesyscontrol"
               name: data-storage
+    {{- end }}
