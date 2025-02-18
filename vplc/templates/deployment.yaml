@@ -30,20 +30,20 @@ spec:
               - key: user-config
                 path: CODESYSControl_User.cfg
       initContainers:
-      - name: init-plc-application
-        image: 'ubi9/ubi-minimal'
-        command:
-          - sh
-          - '-c'
-          - mkdir -p /data/codesyscontrol/PlcLogic/{{ .appName }} && cd /data/codesyscontrol/PlcLogic/{{ .appName }} && curl -O {{ .appUrl }}/{{ .appName }}.app && curl -O {{ .appUrl }}/{{ .appName }}.crc && cp -f /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/ 
-        resources: {}
-        volumeMounts:
-          - name: data-storage
-            mountPath: /data/codesyscontrol
-          - name: codesys-user-config
-            mountPath: /temp/conf/
-          - name: config
-            mountPath: /conf/codesyscontrol
+        - name: init-plc-application
+          image: 'ubi9/ubi-minimal'
+          command:
+            - sh
+            - '-c'
+            - mkdir -p /data/codesyscontrol/PlcLogic/{{ .appName }} && cd /data/codesyscontrol/PlcLogic/{{ .appName }} && curl -O {{ .appUrl }}/{{ .appName }}.app && curl -O {{ .appUrl }}/{{ .appName }}.crc && cp -f /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/ 
+          resources: {}
+          volumeMounts:
+            - name: data-storage
+              mountPath: /data/codesyscontrol
+            - name: codesys-user-config
+              mountPath: /temp/conf/
+            - name: config
+              mountPath: /conf/codesyscontrol
       containers:
         - name: codesys-plc
           image: quay.io/rh-ee-hvanniek/codesyscontrol:4.14.0.0
