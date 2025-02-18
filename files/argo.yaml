@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: codesys
+spec:
+  destination:
+    name: ''
+    namespace: codesys
+    server: https://kubernetes.default.svc
+  source:
+    path: codesys-test
+    repoURL: https://github.com/hvanniek/codesys-test.git
+    targetRevision: HEAD
+  sources: []
+  project: default
