@@ -1,0 +1,6 @@
+apiVersion: v2
+name: codesys
+description: A chart to install and configure a virtual PLC
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
