@@ -1,0 +1,44 @@
+{{- range $.Values.plcs }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .name }}
+  labels:
+    app.kubernetes.io/part-of: {{ .partOf }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .name }}
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: {{ .name }}
+    spec:
+      hostname: {{ .name }}
+      volumes:
+        - name: data-storage
+          persistentVolumeClaim: 
+            claimName: {{ .name }}-data
+        - name: config
+          persistentVolumeCLaim:
+            claimName: {{ .name }}-config
+      initContainers:
+      - name: init-plc-application
+        image: ubi9/ubi-minimal
+        command: ['sh', '-c', "mkdir -p /data/codesyscontrol/PlcLogic/Application && cd /data/codesyscontrol/PlcLogic/Application && curl -O {{ .appUrl }}/Generator.app && curl -O {{ .appUrl }}/Generator.crc" ]
+        volumeMounts:
+          - mountPath: "/data/codesyscontrol"
+            name: data-storage 
+      containers:
+        - name: codesys-plc
+          image: quay.io/rh-ee-hvanniek/codesyscontrol:4.14.0.0
+          ports:
+            - name: opc-ua
+              containerPort: 4840
+              protocol: TCP
+          volumeMounts:
+            - mountPath: "/conf/codesyscontrol/"
+              name: config
+            - mountPath: "/data/codesyscontrol"
+              name: data-storage
