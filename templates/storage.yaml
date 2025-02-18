@@ -1,0 +1,32 @@
+{{- range $.Values.plcs }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .name }}-data
+  labels:
+    app.kubernetes.io/part-of: plc-application-{{ .name }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ocs-storagecluster-cephfs
+  volumeMode: Filesystem
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .name }}-config
+  labels:
+    app.kubernetes.io/part-of: {{ .partOf }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ocs-storagecluster-cephfs
+  volumeMode: Filesystem
+{{- end }}
