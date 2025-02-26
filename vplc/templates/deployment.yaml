@@ -65,7 +65,9 @@ spec:
               - CAP_SYS_MODULE
               - CAP_SYS_NICE
               - CAP_SYS_PTRACE
-    "cap_sys_rawio" "cap_sys_resource" "cap_sys_time
+              - CAP_SYS_RAWIO
+              - CAP_SYS_RESOURCE
+              - CAP_SYS_TIME
           ports:
             - name: opc-ua
               containerPort: 4840
