@@ -21,7 +21,7 @@ spec:
         - name: data-storage
           persistentVolumeClaim: 
             claimName: {{ .name }}-data
-        - name: config
+        - name: config-storage
           persistentVolumeCLaim:
             claimName: {{ .name }}-config
         - name: codesys-user-config
@@ -43,6 +43,7 @@ spec:
               cd /data/codesyscontrol/PlcLogic/{{ .appName }};
               curl -O {{ .appUrl }}/{{ .appName }}.app; 
               curl -O {{ .appUrl }}/{{ .appName }}.crc ;
+              mkdir -p /conf/codesyscontrol/;
               cp -f /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/;
               echo Copied config;
               cat /conf/codesyscontrol/CODESYSControl_User.cfg;
@@ -52,7 +53,7 @@ spec:
               mountPath: /data/codesyscontrol/
             - name: codesys-user-config
               mountPath: /temp/conf/
-            - name: config
+            - name: config-storage
               mountPath: /conf/codesyscontrol/
       containers:
         - name: codesys-plc
@@ -83,7 +84,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - mountPath: "/conf/codesyscontrol/"
-              name: config
+              name: config-storage
             - mountPath: "/data/codesyscontrol/"
               name: data-storage
     {{- end }}
