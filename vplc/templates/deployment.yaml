@@ -40,11 +40,11 @@ spec:
           resources: {}
           volumeMounts:
             - name: data-storage
-              mountPath: /data/codesyscontrol
+              mountPath: /data/codesyscontrol/
             - name: codesys-user-config
               mountPath: /temp/conf/
             - name: config
-              mountPath: /conf/codesyscontrol
+              mountPath: /conf/codesyscontrol/
       containers:
         - name: codesys-plc
           image: quay.io/rh-ee-hvanniek/codesyscontrol:4.14.0.0
@@ -73,8 +73,8 @@ spec:
               containerPort: 4840
               protocol: TCP
           volumeMounts:
-            - mountPath: "/conf/codesyscontrol"
+            - mountPath: "/conf/codesyscontrol/"
               name: config
-            - mountPath: "/data/codesyscontrol"
+            - mountPath: "/data/codesyscontrol/"
               name: data-storage
     {{- end }}
