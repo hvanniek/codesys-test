@@ -33,10 +33,19 @@ spec:
       initContainers:
         - name: init-plc-application
           image: 'ubi9/ubi-minimal'
+          privileged: true
           command:
             - sh
             - '-c'
-            - mkdir -p /data/codesyscontrol/PlcLogic/{{ .appName }} && cd /data/codesyscontrol/PlcLogic/{{ .appName }} && curl -O {{ .appUrl }}/{{ .appName }}.app && curl -O {{ .appUrl }}/{{ .appName }}.crc && cp -f /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/ 
+          args:
+            - mkdir -p /data/codesyscontrol/PlcLogic/{{ .appName }}; 
+            - echo "Downloading App from:{{ .appName }}" 
+            - cd /data/codesyscontrol/PlcLogic/{{ .appName }};
+            - curl -O {{ .appUrl }}/{{ .appName }}.app; 
+            - curl -O {{ .appUrl }}/{{ .appName }}.crc ;
+            - cp -f /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/;
+            - echo "Copied config:"
+            - cat /conf/codesyscontrol/CODESYSControl_User.cfg
           resources: {}
           volumeMounts:
             - name: data-storage
