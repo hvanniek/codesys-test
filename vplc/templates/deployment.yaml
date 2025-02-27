@@ -39,12 +39,12 @@ spec:
             - '-c'
           args:
             - mkdir -p /data/codesyscontrol/PlcLogic/{{ .appName }}; 
-              echo "Downloading App from:{{ .appName }}"; 
+              echo Downloading App from:{{ .appName }}; 
               cd /data/codesyscontrol/PlcLogic/{{ .appName }};
               curl -O {{ .appUrl }}/{{ .appName }}.app; 
               curl -O {{ .appUrl }}/{{ .appName }}.crc ;
               cp -f /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/;
-              echo "Copied config:";
+              echo Copied config;
               cat /conf/codesyscontrol/CODESYSControl_User.cfg;
           resources: {}
           volumeMounts:
