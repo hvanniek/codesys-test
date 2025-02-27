@@ -73,7 +73,7 @@ spec:
               containerPort: 4840
               protocol: TCP
           volumeMounts:
-            - mountPath: "/conf/codesyscontrol/"
+            - mountPath: "/conf/codesyscontrol"
               name: config
             - mountPath: "/data/codesyscontrol"
               name: data-storage
