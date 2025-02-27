@@ -1,4 +1,3 @@
----
 plcs:
   - name: codesys-plc-1
     appUrl: https://github.com/hvanniek/codesys-test/blob/main/files/
