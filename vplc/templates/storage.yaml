@@ -14,7 +14,6 @@ spec:
   storageClassName: lvms-vg1-immediate
   volumeMode: Filesystem
 ---
-
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
