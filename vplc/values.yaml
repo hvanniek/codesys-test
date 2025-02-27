@@ -5,3 +5,6 @@ plcs:
     partOf: codesys
     appName: Generator
     serialNo: 00000000333a536a
+serviceAccount:
+  create: false
+  name:  codesys-plc-controller
