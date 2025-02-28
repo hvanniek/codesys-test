@@ -22,7 +22,7 @@ spec:
           persistentVolumeClaim: 
             claimName: {{ .name }}-data
         - name: conf-storage
-          persistentVolumeCLaim:
+          persistentVolumeClaim:
             claimName: {{ .name }}-config
         - name: codesys-user-config
           configMap:
