@@ -33,7 +33,8 @@ spec:
       initContainers:
         - name: init-plc-application
           image: 'ubi9/ubi-minimal'
-          privileged: true
+          securityContext:
+            privileged: true
           command:
             - sh
             - '-c'
