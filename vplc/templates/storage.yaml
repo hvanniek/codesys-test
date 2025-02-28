@@ -22,10 +22,10 @@ metadata:
     app.kubernetes.io/part-of: {{ .partOf }}
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 1Gi
-  storageClassName: lvms-vg1-immediate
+  storageClassName: rook-cephfs
   volumeMode: Filesystem
 {{- end }}
