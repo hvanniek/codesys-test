@@ -61,23 +61,23 @@ spec:
           securityContext:
             privileged: true
             capabilities:
-            add:
-              - CAP_CHOWN
-              - CAP_IPC_LOCK
-              - CAP_KILL
-              - CAP_NET_ADMIN
-              - CAP_NET_BIND_SERVICE
-              - CAP_NET_BROADCAST
-              - CAP_NET_RAW
-              - CAP_SETFCAP
-              - CAP_SETPCAP
-              - CAP_SYS_ADMIN
-              - CAP_SYS_MODULE
-              - CAP_SYS_NICE
-              - CAP_SYS_PTRACE
-              - CAP_SYS_RAWIO
-              - CAP_SYS_RESOURCE
-              - CAP_SYS_TIME
+              add:
+                - CAP_CHOWN
+                - CAP_IPC_LOCK
+                - CAP_KILL
+                - CAP_NET_ADMIN
+                - CAP_NET_BIND_SERVICE
+                - CAP_NET_BROADCAST
+                - CAP_NET_RAW
+                - CAP_SETFCAP
+                - CAP_SETPCAP
+                - CAP_SYS_ADMIN
+                - CAP_SYS_MODULE
+                - CAP_SYS_NICE
+                - CAP_SYS_PTRACE
+                - CAP_SYS_RAWIO
+                - CAP_SYS_RESOURCE
+                - CAP_SYS_TIME
           ports:
             - name: opc-ua
               containerPort: 4840
