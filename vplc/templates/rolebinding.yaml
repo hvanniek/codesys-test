@@ -4,7 +4,7 @@ metadata:
   name: argocd-codesys-admin
 subjects:
 - kind: ServiceAccount
-  name: argocd-argocd-application-controller
+  name: penshift-gitops-argocd-application-controller
 roleRef:
   kind: Role 
   name: admin
