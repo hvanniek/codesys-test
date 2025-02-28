@@ -21,7 +21,7 @@ spec:
         - name: data-storage
           persistentVolumeClaim: 
             claimName: {{ .name }}-data
-        - name: config-storage
+        - name: conf-storage
           persistentVolumeCLaim:
             claimName: {{ .name }}-config
         - name: codesys-user-config
@@ -53,7 +53,7 @@ spec:
               mountPath: /data/codesyscontrol/
             - name: codesys-user-config
               mountPath: /temp/conf/
-            - name: config-storage
+            - name: conf-storage
               mountPath: /conf/codesyscontrol/
       containers:
         - name: codesys-plc
@@ -90,7 +90,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - mountPath: "/conf/codesyscontrol/"
-              name: config-storage
+              name: conf-storage
             - mountPath: "/data/codesyscontrol/"
               name: data-storage
     {{- end }}
