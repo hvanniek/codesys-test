@@ -9,7 +9,7 @@ data:
   user-config: |
       ;virtuallinux
       [CmpLog]
-      Logger.0.Filter=0x0000000F
+      Logger.0.Filter=0xFFFFFFFF
       Logger.0.MaxEntries=1000000
       Logger.0.MaxFileSize=10000000
 
