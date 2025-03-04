@@ -53,6 +53,7 @@ spec:
               ls /temp/conf;
               cp -frv /temp/conf/* /conf/codesyscontrol/ ;
               echo Copied config;
+              ls /temp/codesyscontrol;
               cat /conf/codesyscontrol/CODESYSControl_User.cfg;
               touch /conf/codesyscontrol/.docker_initialized;
           resources: {}
