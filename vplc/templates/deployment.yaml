@@ -30,6 +30,10 @@ spec:
             items:
               - key: user-config
                 path: CODESYSControl_User.cfg
+              - key: config
+                path: CODESYSControl.cfg
+              - key: server-ini
+                path: Server.ini
       initContainers:
         - name: init-plc-application
           image: 'ubi9/ubi-minimal'
@@ -45,9 +49,10 @@ spec:
               curl -O {{ .appUrl }}/{{ .appName }}.app; 
               curl -O {{ .appUrl }}/{{ .appName }}.crc ;
               mkdir -p /conf/codesyscontrol/;
-              cp -f /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/;
+              cp -f /temp/conf/. /conf/codesyscontrol/;
               echo Copied config;
               cat /conf/codesyscontrol/CODESYSControl_User.cfg;
+              touch /conf/codesyscontrol/.docker_initialized
           resources: {}
           volumeMounts:
             - name: data-storage
