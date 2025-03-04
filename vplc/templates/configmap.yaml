@@ -12,6 +12,8 @@ data:
       Logger.0.Filter=0xFFFFFFFF
       Logger.0.MaxEntries=100000000
       Logger.0.MaxFileSize=1000000000
+      CmpWebServer.Filter=0xFFFFFFFF
+      CmpOPCUAClient.Filter=0xFFFFFFFF
 
       [ComponentManager]
       Component.1=CmpBACnet
