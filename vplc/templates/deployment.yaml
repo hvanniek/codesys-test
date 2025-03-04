@@ -48,7 +48,7 @@ spec:
               cd /data/codesyscontrol/PlcLogic/{{ .appName }};
               curl -O {{ .appUrl }}/{{ .appName }}.app; 
               curl -O {{ .appUrl }}/{{ .appName }}.crc ;
-              mkdir -p /conf/codesyscontrol/;
+              mkdir -p /conf/codesyscontrol/ && cd /conf/codesyscontrol;
               echo Copyng files;
               ls /temp/conf;
               cp -fRvL /temp/conf/* /conf/codesyscontrol/;              
