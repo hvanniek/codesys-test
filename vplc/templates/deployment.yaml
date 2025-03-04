@@ -51,7 +51,7 @@ spec:
               mkdir -p /conf/codesyscontrol/;
               echo Copyng files;
               ls /temp/conf;
-              cp -fr /temp/conf/* /conf/codesyscontrol/;
+              cp -frv /temp/conf/* /conf/codesyscontrol/ ;
               echo Copied config;
               cat /conf/codesyscontrol/CODESYSControl_User.cfg;
               touch /conf/codesyscontrol/.docker_initialized;
