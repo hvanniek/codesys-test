@@ -51,11 +51,11 @@ spec:
               mkdir -p /conf/codesyscontrol/;
               echo Copyng files;
               ls /temp/conf;
-              cp -frv /temp/conf/* /conf/codesyscontrol/ ;
-              echo Copied config;
-              ls /conf/codesyscontrol;
-              cat /conf/codesyscontrol/CODESYSControl_User.cfg;
+              cp -frv /temp/conf/* /conf/codesyscontrol/;              
               touch /conf/codesyscontrol/.docker_initialized;
+              echo Contents of new conf folder;
+              ls /conf/codesyscontrol/ -lah;
+              cat /conf/codesyscontrol/CODESYSControl_User.cfg
           resources: {}
           volumeMounts:
             - name: data-storage
