@@ -10,8 +10,8 @@ data:
       ;virtuallinux
       [CmpLog]
       Logger.0.Filter=0xFFFFFFFF
-      Logger.0.MaxEntries=10000000
-      Logger.0.MaxFileSize=100000000
+      Logger.0.MaxEntries=100000000
+      Logger.0.MaxFileSize=1000000000
 
       [ComponentManager]
       Component.1=CmpBACnet
@@ -78,8 +78,8 @@ data:
       Logger.0.Name=codesyscontrol.log
       ;Logger.0.Filter=0x0000000F ; moved to CODESYSControl_User.cfg to allow changes by PLCShell command
       Logger.0.Enable=1
-      Logger.0.MaxEntries=100000
-      Logger.0.MaxFileSize=1000000
+      Logger.0.MaxEntries=10000000
+      Logger.0.MaxFileSize=100000000
       Logger.0.MaxFiles=1
       Logger.0.Backend.0.ClassId=0x0000010B   ;sends logger messages to SysOut
       Logger.0.Backend.1.ClassId=0x00000104   ;writes logger messages in a file
