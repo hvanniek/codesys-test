@@ -50,9 +50,7 @@ spec:
               curl -O {{ .appUrl }}/{{ .appName }}.crc ;
               mkdir -p /conf/codesyscontrol/ && cd /conf/codesyscontrol;
               echo Copyng files;
-              cp -fv /temp/conf/CODESYSControl_User.cfg /conf/codesyscontrol/CODESYSControl_User.cfg;        
-              cp -fv /temp/conf/CODESYSControl.cfg /conf/codesyscontrol/CODESYSControl.cfg; 
-              cp -fv /temp/conf/Server.ini /conf/codesyscontrol/Server.ini;       
+              cp -fvLR /temp/conf/* /conf/codesyscontrol/;       
               touch /conf/codesyscontrol/.docker_initialized;
               echo Contents of new conf folder;
               ls /conf/codesyscontrol/ -lah;
