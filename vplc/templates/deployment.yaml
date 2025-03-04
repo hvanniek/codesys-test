@@ -49,7 +49,9 @@ spec:
               curl -O {{ .appUrl }}/{{ .appName }}.app; 
               curl -O {{ .appUrl }}/{{ .appName }}.crc ;
               mkdir -p /conf/codesyscontrol/;
-              cp -f /temp/conf/. /conf/codesyscontrol/;
+              echo Copyng files;
+              ls /temp/conf
+              cp -fa /temp/conf/* /conf/codesyscontrol/;
               echo Copied config;
               cat /conf/codesyscontrol/CODESYSControl_User.cfg;
               touch /conf/codesyscontrol/.docker_initialized
