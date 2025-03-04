@@ -50,11 +50,11 @@ spec:
               curl -O {{ .appUrl }}/{{ .appName }}.crc ;
               mkdir -p /conf/codesyscontrol/;
               echo Copyng files;
-              ls /temp/conf
+              ls /temp/conf;
               cp -fr /temp/conf/* /conf/codesyscontrol/;
               echo Copied config;
               cat /conf/codesyscontrol/CODESYSControl_User.cfg;
-              touch /conf/codesyscontrol/.docker_initialized
+              touch /conf/codesyscontrol/.docker_initialized;
           resources: {}
           volumeMounts:
             - name: data-storage
