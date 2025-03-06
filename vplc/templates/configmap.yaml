@@ -28,7 +28,7 @@ data:
 
       [CmpApp]
       Bootproject.RetainMismatch.Init=1
-      ;RetainType.Applications=InSRAM
+      RetainType.Applications=InSRAM
       Application.1={{ .appName }}
 
       [CmpRedundancyConnectionIP]
