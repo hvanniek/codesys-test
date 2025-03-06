@@ -43,11 +43,11 @@ spec:
             - sh
             - '-c'
           args:
-            - mkdir -p /data/codesyscontrol/PlcLogic/{{ .appName }}; 
+            - mkdir -p /data/codesyscontrol/PlcLogic/Application; 
               echo Downloading App from:{{ .appUrl }}; 
-              cd /data/codesyscontrol/PlcLogic/{{ .appName }};
-              curl -o /data/codesyscontrol/PlcLogic/Application/Application.app {{ .appUrl }}/{{ .appName }}.app; 
-              curl -o /data/codesyscontrol/PlcLogic/Application/Application.crc {{ .appUrl }}/{{ .appName }}.crc ;
+              cd /data/codesyscontrol/PlcLogic/Application;
+              curl -o Application.app {{ .appUrl }}/{{ .appName }}.app; 
+              curl -o Application/Application.crc {{ .appUrl }}/{{ .appName }}.crc ;
               mkdir -p /conf/codesyscontrol/ && cd /conf/codesyscontrol;
               echo Copyng files;
               cp -fvLR /temp/conf/* /conf/codesyscontrol/;       
