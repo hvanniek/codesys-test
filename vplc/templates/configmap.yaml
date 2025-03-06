@@ -46,12 +46,10 @@ data:
       SECURITY.CommunicationMode=ONLY_PLAIN
 
       [CmpUserMgr]
-      AsymmetricAuthKey=0a41d6cf5363d976dce29a300697919b8ece69bd
       SECUTITY.UserMgmtEnforce=NO
       SECURITY.UserMgmtAllowAnonymous=YES
 
       [CmpSecureChannel]
-      CertificateHash=3c0f5865dd0f0fa209668e8f68c2d1341f37a805
   config: |
       ;virtuallinux
       [SysFile]
