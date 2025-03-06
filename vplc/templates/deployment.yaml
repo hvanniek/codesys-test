@@ -47,7 +47,7 @@ spec:
               echo Downloading App from:{{ .appUrl }}; 
               cd /data/codesyscontrol/PlcLogic/Application;
               curl -o Application.app {{ .appUrl }}/{{ .appName }}.app; 
-              curl -o Application/Application.crc {{ .appUrl }}/{{ .appName }}.crc ;
+              curl -o Application.crc {{ .appUrl }}/{{ .appName }}.crc ;
               mkdir -p /conf/codesyscontrol/ && cd /conf/codesyscontrol;
               echo Copyng files;
               cp -fvLR /temp/conf/* /conf/codesyscontrol/;       
