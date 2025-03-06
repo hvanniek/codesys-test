@@ -38,7 +38,7 @@ spec:
         - name: init-plc-application
           image: 'ubi9/ubi-minimal'
           securityContext:
-            privileged: true
+            privileged: false
           command:
             - sh
             - '-c'
@@ -67,7 +67,7 @@ spec:
         - name: codesys-plc
           image: quay.io/rh-ee-hvanniek/codesyscontrol:4.14.0.0
           securityContext:
-            privileged: true
+            privileged: false
             capabilities:
               add:
                 - CAP_CHOWN
