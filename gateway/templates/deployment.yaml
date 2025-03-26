@@ -10,6 +10,7 @@ spec:
     matchLabels:
       app: {{ .name }}
   replicas: 1
+
   template:
     metadata:
       labels:
@@ -17,9 +18,16 @@ spec:
     spec:
       hostname: {{ .name }}
       serviceAccountName: codesys-plc-controller-sa
+      volumes:
+        - name: data-storage
+            persistentVolumeClaim: 
+            claimName: {{ .name }}-data
+        - name: conf-storage
+            persistentVolumeClaim:
+            claimName: {{ .name }}-config
       containers:
         - name: codesys-gateway
-          image: quay.io/rh-ee-hvanniek/codesysgw:14.4.0.0
+          image: quay.io/rh-ee-hvanniek/codesysgw:4.14.0.0
           ports:
             - name: opc-ua
               containerPort: 1217
