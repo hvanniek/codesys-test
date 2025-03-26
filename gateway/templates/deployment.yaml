@@ -19,7 +19,7 @@ spec:
       serviceAccountName: codesys-plc-controller-sa
       containers:
         - name: codesys-gateway
-          image: quay.io/rh-ee-hvanniek/codesysgw
+          image: quay.io/rh-ee-hvanniek/codesysgw:14.4.0.0
           ports:
             - name: opc-ua
               containerPort: 1217
