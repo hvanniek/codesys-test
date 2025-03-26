@@ -1,0 +1,31 @@
+{{- range $.Values.gateway }}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .name }}-data
+  labels:
+    app.kubernetes.io/part-of: {{ .partOf }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: lvms-vg1-immediate
+  volumeMode: Filesystem
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .name }}-config
+  labels:
+    app.kubernetes.io/part-of: {{ .partOf }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: rook-cephfs
+  volumeMode: Filesystem
+{{- end }}

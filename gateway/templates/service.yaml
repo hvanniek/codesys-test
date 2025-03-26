@@ -1,0 +1,19 @@
+{{- range $.Values.gateway }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .name }}
+  labels:
+    app.kubernetes.io/part-of: {{ .partOf }}
+spec:
+  type: NodePort
+  selector:
+    app: {{ .name }}
+  ports:
+    - name: gateway
+      protocol: TCP
+      port: 1217
+      targetPort: 1217
+      nodePort: {{ .hostPort }}
+
+{{- end }}

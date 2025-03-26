@@ -1,0 +1,6 @@
+apiVersion: v2
+name: codesys-gw
+description: A chart to install and configure a gateway for Codesys virtual PLC
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
