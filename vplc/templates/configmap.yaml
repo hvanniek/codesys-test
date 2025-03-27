@@ -48,6 +48,7 @@ data:
       [CmpUserMgr]
       SECUTITY.UserMgmtEnforce=NO
       SECURITY.UserMgmtAllowAnonymous=YES
+      AsymmetricAuthKey=3751f6eaf041e4beba40b63e8e35d90ad2c1125d
 
       [CmpSecureChannel]
   config: |
