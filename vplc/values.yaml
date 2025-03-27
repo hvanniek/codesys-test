@@ -2,8 +2,13 @@ plcs:
   - name: codesys-plc-1
     appUrl: https://raw.githubusercontent.com/hvanniek/codesys-test/refs/heads/main/files
     partOf: codesys
-    appName: Generator
+    appName: Application
     serialNo: 00000000333a536a
+  - name: codesys-plc-2
+    appUrl: https://raw.githubusercontent.com/hvanniek/codesys-test/refs/heads/main/files
+    partOf: codesys
+    appName: Generator
+    serialNo: 00000000333a5370
 serviceAccount:
   create: true
   name:  codesys-plc-controller-sa
