@@ -20,10 +20,10 @@ spec:
       serviceAccountName: codesys-plc-controller-sa
       volumes:
         - name: data-storage
-            persistentVolumeClaim: 
+          persistentVolumeClaim: 
             claimName: {{ .name }}-data
         - name: conf-storage
-            persistentVolumeClaim:
+          persistentVolumeClaim:
             claimName: {{ .name }}-config
       containers:
         - name: codesys-gateway
@@ -32,11 +32,9 @@ spec:
             - name: opc-ua
               containerPort: 1217
               protocol: TCP
-          vvolumeMounts:
+          volumeMounts:
             - mountPath: "/conf/codesysedge/"
               name: conf-storage
             - mountPath: "/data/codesysedge/"
               name: data-storage
-
-
 {{- end }}
