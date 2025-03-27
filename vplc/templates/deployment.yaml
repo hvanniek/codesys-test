@@ -1,4 +1,5 @@
-{{- range $.Values.plcs }}
+{{- range .Values.plcs }}
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -101,4 +102,4 @@ spec:
               name: conf-storage
             - mountPath: "/data/codesyscontrol/"
               name: data-storage
-    {{- end }}
+{{- end }}
