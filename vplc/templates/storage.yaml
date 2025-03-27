@@ -1,4 +1,5 @@
 {{- range $.Values.plcs }}
+---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:

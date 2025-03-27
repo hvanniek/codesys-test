@@ -1,4 +1,4 @@
-{{- range .Values.plcs }}
+{{- range $.Values.plcs }}
 ---
 apiVersion: apps/v1
 kind: Deployment
