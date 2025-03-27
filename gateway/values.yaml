@@ -1,7 +1,7 @@
 gateway:
   - name: dell-codesys-gateway
     partOf: codesys
-    host:Port: 31217
+    hostPort: 31217
 serviceAccount:
   create: true
   name:  codesys-plc-controller-sa
