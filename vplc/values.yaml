@@ -9,6 +9,11 @@ plcs:
     partOf: codesys
     appName: Generator
     serialNo: 00000000333a5370
+  - name: codesys-profinet
+    appUrl: https://raw.githubusercontent.com/hvanniek/codesys-test/refs/heads/main/files
+    partOf: codesys
+    appName: Application
+    serialNo: 00000000333a5371
 serviceAccount:
   create: true
   name:  codesys-plc-controller-sa
