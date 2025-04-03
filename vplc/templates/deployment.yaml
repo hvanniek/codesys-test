@@ -49,6 +49,7 @@ spec:
               cd /data/codesyscontrol/PlcLogic/{{ .appName }};
               curl -o {{ .appName }}.app {{ .appUrl }}/{{ .appName }}.app; 
               curl -o {{ .appName }}.crc {{ .appUrl }}/{{ .appName }}.crc ;
+              cd /data/codesyscontrol/
               curl -o .UserDatabase.csv {{ .appUrl }}/UserDatabase.csv;
               curl -o .GroupDatabase.csv {{ .appUrl }}/GroupDatabase.csv;
               curl -o .UserMgmtRightsDB.csv {{ .appUrl }}/UserMgmtRightsDB.csv;
