@@ -49,10 +49,13 @@ spec:
               cd /data/codesyscontrol/PlcLogic/{{ .appName }};
               curl -o {{ .appName }}.app {{ .appUrl }}/{{ .appName }}.app; 
               curl -o {{ .appName }}.crc {{ .appUrl }}/{{ .appName }}.crc ;
-              cd /data/codesyscontrol/
+              cd /data/codesyscontrol/;
               curl -o .UserDatabase.csv {{ .appUrl }}/UserDatabase.csv;
+              cp .UserDatabase.csv .UserDatabase.csv_;
               curl -o .GroupDatabase.csv {{ .appUrl }}/GroupDatabase.csv;
+              cp .GroupDatabase.csv .GroupDatabase.csv_;
               curl -o .UserMgmtRightsDB.csv {{ .appUrl }}/UserMgmtRightsDB.csv;
+              cp .UserMgmtRightsDB.csv .UserMgmtRightsDB.csv_
               mkdir -p /conf/codesyscontrol/ && cd /conf/codesyscontrol;
               echo Copyng files;
               cp -fvLR /temp/conf/* /conf/codesyscontrol/;       
