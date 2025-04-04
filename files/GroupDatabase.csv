@@ -8,3 +8,4 @@ g,Anonymous_PLCShellLinuxBackend,0x00004000
 a,Administrator,u=admin
 a,Anonymous_OPCUAServer,u=Anonymous_OPCUAServer
 a,Anonymous_PLCShellLinuxBackend,u=Anonymous_PLCShellLinuxBackend
+Checksum,0x0636e2db
