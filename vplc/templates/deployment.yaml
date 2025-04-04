@@ -55,7 +55,7 @@ spec:
               curl -o .GroupDatabase.csv {{ .appUrl }}/GroupDatabase.csv;
               cp .GroupDatabase.csv .GroupDatabase.csv_;
               curl -o .UserMgmtRightsDB.csv {{ .appUrl }}/UserMgmtRightsDB.csv;
-              cp .UserMgmtRightsDB.csv .UserMgmtRightsDB.csv_
+              cp .UserMgmtRightsDB.csv .UserMgmtRightsDB.csv_;
               mkdir -p /conf/codesyscontrol/ && cd /conf/codesyscontrol;
               echo Copyng files;
               cp -fvLR /temp/conf/* /conf/codesyscontrol/;       
