@@ -27,6 +27,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: rook-cephfs
+  storageClassName: lvms-vg1-immediate
   volumeMode: Filesystem
 {{- end }}
