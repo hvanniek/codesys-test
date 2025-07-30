@@ -11,7 +11,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: rook-cephfs
+  storageClassName: ocs-storagecluster-cephfs
   volumeMode: Filesystem
 ---
 kind: PersistentVolumeClaim
@@ -26,6 +26,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: rook-cephfs
+  storageClassName: ocs-storagecluster-cephfs
   volumeMode: Filesystem
 {{- end }}
