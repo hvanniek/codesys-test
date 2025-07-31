@@ -1,5 +1,5 @@
 gateway:
-  - name: dell-codesys-gateway
+  - name: codesys-gateway
     partOf: codesys
     hostPort: 31217
 serviceAccount:
