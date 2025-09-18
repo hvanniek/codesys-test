@@ -2,6 +2,7 @@ gateway:
   - name: codesys-gateway
     partOf: codesys
     hostPort: 31217
+    storageClass: lvms-vg1-immediate
 serviceAccount:
   create: true
   name:  codesys-plc-controller-sa

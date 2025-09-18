@@ -4,16 +4,19 @@ plcs:
     partOf: codesys
     appName: Application
     serialNo: 00000000333a536a
+    storageClass: lvms-vg1-immediate
   - name: codesys-plc-2
     appUrl: https://raw.githubusercontent.com/hvanniek/codesys-test/refs/heads/main/files
     partOf: codesys
     appName: Generator
     serialNo: 00000000333a5370
+    storageClass: lvms-vg1-immediate
   - name: codesys-profinet
     appUrl: https://raw.githubusercontent.com/hvanniek/codesys-test/refs/heads/main/files
     partOf: codesys
     appName: Application
     serialNo: 00000000333a5371
+    storageClass: lvms-vg1-immediate
 serviceAccount:
   create: true
   name:  codesys-plc-controller-sa
